@@ -1,0 +1,17 @@
+CREATE TABLE session_cache (
+    row_id INTEGER NOT NULL PRIMARY KEY CHECK (row_id = 1),
+    email TEXT,
+    language TEXT NOT NULL,
+    updated_at INTEGER NOT NULL
+);
+
+selectSession:
+SELECT * FROM session_cache
+WHERE row_id = 1;
+
+upsertSession:
+INSERT OR REPLACE INTO session_cache(row_id, email, language, updated_at)
+VALUES (1, ?, ?, ?);
+
+clearSession:
+DELETE FROM session_cache;

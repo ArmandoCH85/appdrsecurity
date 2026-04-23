@@ -1,0 +1,16 @@
+CREATE TABLE device_cache (
+    device_id TEXT NOT NULL PRIMARY KEY,
+    payload TEXT NOT NULL,
+    updated_at INTEGER NOT NULL
+);
+
+selectAllDevices:
+SELECT * FROM device_cache
+ORDER BY updated_at DESC;
+
+upsertDevice:
+INSERT OR REPLACE INTO device_cache(device_id, payload, updated_at)
+VALUES (?, ?, ?);
+
+clearDevices:
+DELETE FROM device_cache;

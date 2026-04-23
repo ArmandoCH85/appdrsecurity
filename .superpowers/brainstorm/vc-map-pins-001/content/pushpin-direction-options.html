@@ -1,0 +1,48 @@
+<h2>Marcador en mapa: chincheta con dirección</h2>
+<p class="subtitle">Comparación de dos lecturas. Haz clic en la tarjeta que te encaje; luego dime en el chat cuál eliges (A o B) o qué ajustarías.</p>
+
+<div class="cards" style="margin-top:1rem;">
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding:1.25rem;background:linear-gradient(180deg,#b8d4e8 0%,#e8e4dc 40%,#c8d4c0 100%);min-height:220px;align-items:center;justify-content:center;position:relative;">
+      <p style="position:absolute;top:0.5rem;left:0.5rem;font-size:0.7rem;opacity:0.75;background:rgba(255,255,255,0.7);padding:0.2rem 0.4rem;border-radius:4px;">Vista de mapa (esquema)</p>
+      <!-- A: gota + cuña de rumbo en el borde superior (estilo “apps de mapas”) -->
+      <svg width="120" height="160" viewBox="0 0 120 160" style="filter:drop-shadow(0 3px 6px rgba(0,0,0,0.25));">
+        <g transform="translate(60,100)">
+          <path d="M0,-58 C-22,-58 -40,-40 -40,-15 C-40,15 0,55 0,55 C0,55 40,15 40,-15 C40,-40 22,-58 0,-58Z" fill="#C4514C" stroke="rgba(255,255,255,0.95)" stroke-width="3"/>
+          <!-- cuña de rumbo en la parte superior del cabezal -->
+          <g transform="rotate(25)">
+            <path d="M0,-70 L12,-50 L-12,-50 Z" fill="#FFFFFF" stroke="rgba(0,0,0,0.12)" stroke-width="1"/>
+            <path d="M0,-68 L8,-52 L-8,-52 Z" fill="#C4514C"/>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <div class="card-body">
+      <h3> Opción A — Gota + cuña de rumbo</h3>
+      <p>La chincheta (gota) ancla en el suelo; la <strong>cuña/flecha</strong> en el <strong>borde superior</strong> indica hacia dónde mira el vehículo. Estética parecida a muchas apps de mapas: un solo cuerpo coherente.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding:1.25rem;background:linear-gradient(180deg,#b8d4e8 0%,#e8e4dc 40%,#c8d4c0 100%);min-height:220px;align-items:center;justify-content:center;position:relative;">
+      <p style="position:absolute;top:0.5rem;left:0.5rem;font-size:0.7rem;opacity:0.75;background:rgba(255,255,255,0.7);padding:0.2rem 0.4rem;border-radius:4px;">Vista de mapa (esquema)</p>
+      <!-- B: cabeza de pin + flecha / banderín distinto arriba -->
+      <svg width="120" height="160" viewBox="0 0 120 160" style="filter:drop-shadow(0 3px 6px rgba(0,0,0,0.25));">
+        <g transform="translate(60,100)">
+          <path d="M0,-55 C-20,-55 -35,-38 -35,-12 C-35,12 0,52 0,52 C0,52 35,12 35,-12 C35,-38 20,-55 0,-55Z" fill="#C4514C" stroke="rgba(255,255,255,0.95)" stroke-width="3"/>
+        </g>
+        <!-- banderín de dirección arriba, separado del volumen de la gota -->
+        <g transform="translate(60,32) rotate(25)">
+          <rect x="-18" y="-14" width="36" height="28" rx="4" fill="#ffffff" stroke="rgba(0,0,0,0.15)" stroke-width="1.5"/>
+          <path d="M0,-6 L0,8 M-6,2 L6,2" stroke="#C4514C" stroke-width="2.5" stroke-linecap="round"/>
+        </g>
+      </svg>
+    </div>
+    <div class="card-body">
+      <h3> Opción B — Pin + indicador de rumbo arriba</h3>
+      <p>El <strong>cuerpo de chincheta</strong> (gota) marca el punto; un <strong>indicador</strong> (banderín / flecha) va <strong>encima y aparte</strong>, en ángulo = rumbo. Más legible en zoom bajo, más “doble capa” visual.</p>
+    </div>
+  </div>
+</div>
+
+<p class="subtitle" style="margin-top:1.5rem;">Tras ver esto, responde en el chat: <strong>A</strong>, <strong>B</strong>, o <strong>mezcla</strong> (p. ej. “A pero la cuña más fina”).</p>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "118096597918",
+    "project_id": "dr-security-gps",
+    "storage_bucket": "dr-security-gps.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:118096597918:android:065267551c356c0a127c8f",
+        "android_client_info": {
+          "package_name": "com.drsecuritygps.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkXYECjzZabZV_glP7o7Swb4PQhEsT-5M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS reverse_geocode_cache (
+    cache_key TEXT NOT NULL PRIMARY KEY,
+    address TEXT NOT NULL,
+    updated_at INTEGER NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS alert_event_notified (
+    event_id TEXT NOT NULL PRIMARY KEY,
+    payload TEXT NOT NULL,
+    notified_at INTEGER NOT NULL
+);

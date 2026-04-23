@@ -1,0 +1,19 @@
+.superdesign
+
+# Gradle / Android
+build/
+.gradle/
+.kotlin/
+**/build/
+local.properties
+*.iml
+.idea/
+*.hprof
+.cxx/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

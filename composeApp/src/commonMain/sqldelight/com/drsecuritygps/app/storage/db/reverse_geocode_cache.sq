@@ -1,0 +1,15 @@
+CREATE TABLE reverse_geocode_cache (
+    cache_key TEXT NOT NULL PRIMARY KEY,
+    address TEXT NOT NULL,
+    updated_at INTEGER NOT NULL
+);
+
+selectAddressByKey:
+SELECT address
+FROM reverse_geocode_cache
+WHERE cache_key = ?
+LIMIT 1;
+
+upsertAddress:
+INSERT OR REPLACE INTO reverse_geocode_cache(cache_key, address, updated_at)
+VALUES (?, ?, ?);

@@ -1,0 +1,16 @@
+CREATE TABLE alert_cache (
+    alert_id TEXT NOT NULL PRIMARY KEY,
+    payload TEXT NOT NULL,
+    updated_at INTEGER NOT NULL
+);
+
+selectAllAlerts:
+SELECT * FROM alert_cache
+ORDER BY updated_at DESC;
+
+upsertAlert:
+INSERT OR REPLACE INTO alert_cache(alert_id, payload, updated_at)
+VALUES (?, ?, ?);
+
+clearAlerts:
+DELETE FROM alert_cache;

@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="pinFill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#28D7E8"/>
+      <stop offset="52%" stop-color="#1691EA"/>
+      <stop offset="100%" stop-color="#0F49C8"/>
+    </linearGradient>
+    <linearGradient id="pinStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D91C5"/>
+      <stop offset="100%" stop-color="#17358E"/>
+    </linearGradient>
+    <linearGradient id="screenFrame" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#75B8FF"/>
+      <stop offset="100%" stop-color="#5F77B6"/>
+    </linearGradient>
+    <linearGradient id="avatarFill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#63D635"/>
+      <stop offset="100%" stop-color="#008B2B"/>
+    </linearGradient>
+    <linearGradient id="mapFill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFC90B"/>
+      <stop offset="100%" stop-color="#F39A0D"/>
+    </linearGradient>
+    <linearGradient id="gpsFill" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFD34C"/>
+      <stop offset="52%" stop-color="#FFB100"/>
+      <stop offset="100%" stop-color="#FF8A00"/>
+    </linearGradient>
+  </defs>
+
+  <g>
+    <path
+      d="M106 259 L159 207 L406 225 L350 280 Z"
+      fill="#F6F0DF"
+      stroke="#A89986"
+      stroke-width="8"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M160 206 L247 184 L414 203 L406 225 L159 207 Z"
+      fill="#EEE7D4"
+      stroke="#A89986"
+      stroke-width="8"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M159 207 L233 267 L350 280 L406 225 L318 167 Z"
+      fill="url(#mapFill)"
+      stroke="#A89986"
+      stroke-width="5"
+      stroke-linejoin="round"
+    />
+    <path d="M187 213 C214 224 224 238 238 266" fill="none" stroke="#A3C43E" stroke-width="10" stroke-linecap="round"/>
+    <path d="M254 194 C281 211 296 228 307 271" fill="none" stroke="#C28A0C" stroke-width="10" stroke-linecap="round"/>
+    <path d="M324 183 C341 202 355 220 370 251" fill="none" stroke="#7A9B2D" stroke-width="10" stroke-linecap="round"/>
+  </g>
+
+  <g>
+    <path
+      d="M166 42 H344
+         C381 42 411 71 411 108
+         V188
+         C411 226 386 253 349 257
+         L310 313
+         C302 324 286 324 278 313
+         L238 257
+         H166
+         C128 257 101 229 101 191
+         V108
+         C101 71 129 42 166 42 Z"
+      fill="url(#pinFill)"
+      stroke="url(#pinStroke)"
+      stroke-width="12"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M143 72 C136 83 130 99 127 118"
+      fill="none"
+      stroke="#FFFFFF"
+      stroke-opacity="0.92"
+      stroke-width="11"
+      stroke-linecap="round"
+    />
+    <path
+      d="M133 128 C136 122 141 120 149 119"
+      fill="none"
+      stroke="#FFFFFF"
+      stroke-opacity="0.92"
+      stroke-width="10"
+      stroke-linecap="round"
+    />
+    <rect
+      x="171"
+      y="90"
+      width="170"
+      height="118"
+      rx="4"
+      fill="#FFFFFF"
+      stroke="url(#screenFrame)"
+      stroke-width="12"
+    />
+    <circle cx="256" cy="126" r="28" fill="url(#avatarFill)"/>
+    <path
+      d="M186 198
+         C196 155 224 144 256 144
+         C288 144 316 155 326 198 Z"
+      fill="url(#avatarFill)"
+    />
+  </g>
+
+  <g aria-label="IcaGPS">
+    <text
+      x="256"
+      y="462"
+      text-anchor="middle"
+      font-family="Arial, Helvetica, sans-serif"
+      font-size="120"
+      font-weight="900"
+      stroke="#050505"
+      stroke-width="12"
+      paint-order="stroke fill"
+      letter-spacing="-4"
+    >
+      <tspan fill="#FFFFFF">Ica</tspan><tspan fill="url(#gpsFill)">GPS</tspan>
+    </text>
+  </g>
+</svg>

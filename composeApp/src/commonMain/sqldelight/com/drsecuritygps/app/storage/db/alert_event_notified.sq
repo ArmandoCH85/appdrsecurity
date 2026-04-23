@@ -1,0 +1,18 @@
+CREATE TABLE alert_event_notified (
+    event_id TEXT NOT NULL PRIMARY KEY,
+    payload TEXT NOT NULL,
+    notified_at INTEGER NOT NULL
+);
+
+countNotified:
+SELECT COUNT(*) FROM alert_event_notified;
+
+eventExists:
+SELECT EXISTS(SELECT 1 FROM alert_event_notified WHERE event_id = ?);
+
+insertNotified:
+INSERT OR REPLACE INTO alert_event_notified (event_id, payload, notified_at)
+VALUES (?, ?, ?);
+
+clearNotified:
+DELETE FROM alert_event_notified;

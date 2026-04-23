@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="100%" height="100%">
+    <defs>
+        <!-- GRADIENTES DE COLOR EXACTOS SEGÚN DESCRIPCIÓN -->
+
+        <!-- Acentos Cian Eléctrico (Swooshes) -->
+        <linearGradient id="cyanAccent" x1="100" y1="100" x2="700" y2="700" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#16A6DB" />
+            <stop offset="100%" stop-color="#0DA4DD" />
+        </linearGradient>
+
+        <!-- Cuerpo Inferior Antracita / Negro Carbón -->
+        <radialGradient id="carbonBody" cx="50%" cy="50%" r="70%">
+            <stop offset="0%" stop-color="#222526" /> <!-- Leve suavización central -->
+            <stop offset="60%" stop-color="#181B1B" /> <!-- Promedio antracita -->
+            <stop offset="100%" stop-color="#06090A" /> <!-- Borde profundo -->
+        </radialGradient>
+
+        <!-- Casquete Superior Plateado / Metal Cromado (BRILLO REDUCIDO) -->
+        <linearGradient id="silverCap" x1="100" y1="100" x2="600" y2="400" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#6B6D70" /> <!-- Gris medio más oscuro -->
+            <stop offset="45%" stop-color="#95979A" /> <!-- Plata más mate / cepillado -->
+            <stop offset="100%" stop-color="#D8DADE" /> <!-- Plata claro (en lugar de blanco puro) -->
+        </linearGradient>
+
+        <!-- Sombreado Anti-aliasing para las letras (Suavidad y mínima profundidad) -->
+        <filter id="textSoftShadow" x="-10%" y="-10%" width="120%" height="120%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur" />
+            <feOffset in="blur" dx="0" dy="2" result="offsetBlur" />
+            <feFlood flood-color="#06090A" flood-opacity="0.4" result="color" />
+            <feComposite in="color" in2="offsetBlur" operator="in" result="shadow" />
+            <feMerge>
+                <feMergeNode in="shadow" />
+                <feMergeNode in="SourceGraphic" />
+            </feMerge>
+        </filter>
+
+        <!-- Clip Paths para estructurar la insignia dentro del círculo -->
+        <clipPath id="inner-circle-clip">
+            <circle cx="400" cy="400" r="348" />
+        </clipPath>
+    </defs>
+
+    <!-- 2. CONTENEDOR DE LA INSIGNIA -->
+    <g>
+        <!-- Borde exterior fino casi negro que separa la insignia del damero -->
+        <circle cx="400" cy="400" r="350" fill="#06090A" />
+
+        <g clip-path="url(#inner-circle-clip)">
+            <!-- Base Cyan (Revelada solo en los swooshes) -->
+            <circle cx="400" cy="400" r="348" fill="url(#cyanAccent)" />
+
+            <!-- Cuerpo Antracita (Elipse rotada que recorta el cyan dejando franjas exactas a las 10-12 y 4-6) -->
+            <ellipse cx="400" cy="400" rx="315" ry="355" transform="rotate(45 400 400)" fill="url(#carbonBody)" />
+
+            <!-- CASQUETE METÁLICO PLATEADO (Ola / Corte media luna superior) -->
+            <!-- Curva suave y dinámica que cruza la esfera asimétricamente -->
+            <path d="M -50,380 C 250,220 500,480 850,280 L 850,-50 L -50,-50 Z" fill="url(#silverCap)" />
+
+            <!-- Reflejo curvo adicional sutil en el borde interior superior (Rim light plateado) - OPACIDAD Y GROSOR REDUCIDOS -->
+            <circle cx="400" cy="400" r="346" fill="none" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="2" />
+        </g>
+
+        <!-- 3. TEXTO (D·R)
+             Ajustado a las proporciones descritas:
+             Hueco de ~25px, Punto de ~50px (Ratio exacto al de 54/108 descrito).
+             Color #FEFEFE con un levísimo sombreado para integrarse al render. -->
+        <g transform="translate(400, 400) scale(0.95) translate(-275, -135)" filter="url(#textSoftShadow)">
+
+            <!-- Letra "D" (Ancho: 240) -->
+            <path d="
+                M 0 0
+                L 105 0
+                A 135 135 0 0 1 240 135
+                A 135 135 0 0 1 105 270
+                L 0 270
+                L 0 205
+                L 105 205
+                A 70 70 0 0 0 175 135
+                A 70 70 0 0 0 105 65
+                L 65 65
+                L 65 180
+                L 0 180
+                Z" fill="#FEFEFE" />
+
+            <!-- Punto central (Radio 25px -> Diametro 50. Centrado a X=290 para dejar márgenes simétricos de 25px) -->
+            <circle cx="290" cy="135" r="25" fill="#FEFEFE" />
+
+            <!-- Letra "R" (Empieza en X=340. Mantiene tus trazados originales escalados en armonía) -->
+            <g transform="translate(340, 0) scale(1.25, 1.51685) translate(-340, -170)">
+                <path d="
+                  M 340,170
+                  L 340,348
+                  L 392,348
+                  L 392,295
+                  L 410,295
+                  L 448,348
+                  L 508,348
+                  L 462,286
+                  Q 478,276 486,262
+                  Q 495,246 495,228
+                  Q 495,210 486,197
+                  Q 477,185 462,179
+                  Q 445,170 418,170
+                  Z
+                  M 392,212
+                  L 420,212
+                  Q 438,212 446,220
+                  Q 453,227 453,238
+                  Q 453,250 445,257
+                  Q 438,262 418,262
+                  L 392,262
+                  Z
+                " fill="#FEFEFE" fill-rule="evenodd"/>
+            </g>
+        </g>
+    </g>
+</svg>
